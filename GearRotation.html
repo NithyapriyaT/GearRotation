@@ -1,0 +1,59 @@
+<html>
+<title>Gear Rotation</title>
+<body>
+<style>
+#img1 {
+
+}
+
+#img2 {
+
+}
+</style>
+<script>
+var degrees = 0;
+function rotateAnimation1(element,speed){
+	degrees++;
+	var elem = document.getElementById(element);
+	//console.log(elem);
+		if(navigator.userAgent.match("Chrome")){
+			elem.style.WebkitTransform = "rotate("+degrees+"deg)";
+		} else if(navigator.userAgent.match("Firefox")){
+			elem.style.MozTransform = "rotate("+degrees+"deg)";
+		} else if(navigator.userAgent.match("MSIE")){
+			elem.style.msTransform = "rotate("+degrees+"deg)";
+		} else if(navigator.userAgent.match("Opera")){
+			elem.style.OTransform = "rotate("+degrees+"deg)";
+		} else {
+			elem.style.transform = "rotate("+degrees+"deg)";
+		}
+		setTimeout('rotateAnimation1(\''+element+'\','+speed+')',speed);		
+}
+function rotateAnimation2(element,speed){
+	degrees++;
+	var elem = document.getElementById(element);
+	//console.log(elem);
+		if(navigator.userAgent.match("Chrome")){
+			elem.style.WebkitTransform = "rotate("+ "-" + degrees+"deg)";
+		} else if(navigator.userAgent.match("Firefox")){
+			elem.style.MozTransform = "rotate("+ "-" + degrees+"deg)";
+		} else if(navigator.userAgent.match("MSIE")){
+			elem.style.msTransform = "rotate("+ "-" + degrees+"deg)";
+		} else if(navigator.userAgent.match("Opera")){
+			elem.style.OTransform = "rotate("+ "-" + degrees+"deg)";
+		} else {
+			elem.style.transform = "rotate("+ "-" + degrees+"deg)";
+		}
+		setTimeout('rotateAnimation2(\''+element+'\','+speed+')',speed);		
+}
+</script>
+	<div>
+		<img id="img1" src="buyer_gear.png">
+		<img id="img2" src="buyer_gear.png">
+		<script>
+			rotateAnimation1("img1",60);
+			rotateAnimation2("img2",60);
+		</script>
+	</div>
+</body>
+</html>
