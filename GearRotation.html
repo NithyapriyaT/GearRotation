@@ -1,21 +1,14 @@
+<!DOCTYPE html>
 <html>
-<title>Gear Rotation</title>
+<head>
+	<title>Gear Rotation</title>
+</head>
 <body>
-<style>
-#img1 {
-
-}
-
-#img2 {
-
-}
-</style>
 <script>
 var degrees = 0;
 function rotateAnimation1(element,speed){
 	degrees++;
 	var elem = document.getElementById(element);
-	//console.log(elem);
 		if(navigator.userAgent.match("Chrome")){
 			elem.style.WebkitTransform = "rotate("+degrees+"deg)";
 		} else if(navigator.userAgent.match("Firefox")){
@@ -32,7 +25,6 @@ function rotateAnimation1(element,speed){
 function rotateAnimation2(element,speed){
 	degrees++;
 	var elem = document.getElementById(element);
-	//console.log(elem);
 		if(navigator.userAgent.match("Chrome")){
 			elem.style.WebkitTransform = "rotate("+ "-" + degrees+"deg)";
 		} else if(navigator.userAgent.match("Firefox")){
